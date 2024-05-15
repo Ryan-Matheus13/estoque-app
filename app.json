@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "estoque",
+    "slug": "estoque",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#fff"
+      },
+      "package": "com.paulo.estoque",
+      "runtimeVersion": "1.0.0"
+    },
+    "web": {
+      "favicon": "./src/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "82696c22-2686-4a99-96a9-315950cdc969"
+      }
+    },
+    "owner": "ryanmath",
+    "updates": {
+      "url": "https://u.expo.dev/fe3cac24-79e4-49ba-bd39-a47952238801"
+    }
+  }
+}
