@@ -81,9 +81,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace 'com.icaro.menudigital'
+    namespace 'com.paulo.estoque'
     defaultConfig {
-        applicationId 'com.icaro.menudigital'
+        applicationId 'com.paulo.estoque'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

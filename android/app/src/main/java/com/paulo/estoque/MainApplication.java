@@ -1,4 +1,4 @@
-package com.icaro.menudigital;
+package com.paulo.estoque;
 
 import android.app.Application;
 import android.content.res.Configuration;
