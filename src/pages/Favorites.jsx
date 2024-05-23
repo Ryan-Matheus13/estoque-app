@@ -7,6 +7,7 @@ import {
   Image,
   ScrollView,
   Dimensions,
+  Linking,
 } from "react-native";
 import Header from "../components/Header";
 import Constants from "expo-constants";
@@ -14,6 +15,7 @@ import { useAppSelector } from "../store/hooks/useAppSelector";
 import { useAppDispatch } from "../store/hooks/useAppDispatch";
 import ProductCartItem from "../components/ProductCartItem";
 import { StatusBar } from "expo-status-bar";
+import { Ionicons } from "@expo/vector-icons";
 
 const windowHeight = Dimensions.get("window").height;
 const navbarHeight = windowHeight - (windowHeight + Constants.statusBarHeight);
@@ -55,6 +57,17 @@ export default function Favorites({ navigation }) {
           )}
         </View>
       </ScrollView>
+      <View style={styles.cartFooter}>
+        <TouchableOpacity
+          onPress={async () =>
+            await Linking.openURL("https://wa.me//5586988888888")
+          }
+          style={styles.whatsButton}
+        >
+          <Text style={styles.whatsButtonText}>Ir para Whatsapp</Text>
+          <Ionicons name="logo-whatsapp" size={20} color="#fff" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -95,6 +108,30 @@ const styles = StyleSheet.create({
     fontFamily: "Gilroy-Bold",
     fontSize: 14,
     color: "#ccc",
+    textAlign: "center",
+  },
+  cartFooter: {
+    width: "100%",
+    flexDirection: "row",
+    gap: 10,
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    backgroundColor: "#fff",
+    justifyContent: "center",
+  },
+  whatsButton: {
+    backgroundColor: "#52C95D",
+    padding: 15,
+    paddingHorizontal: 20,
+    borderRadius: 15,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+  },
+  whatsButtonText: {
+    fontFamily: "Gilroy-Bold",
+    fontSize: 16,
+    color: "#fff",
     textAlign: "center",
   },
 });

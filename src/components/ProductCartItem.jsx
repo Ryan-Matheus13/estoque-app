@@ -22,9 +22,6 @@ export default function ProductCartItem({ product, id }) {
         <View style={styles.productContent}>
           <View style={styles.productLabel}>
             <Text style={styles.productName}>{product.name}</Text>
-            <Text style={styles.productInventory}>
-              {product.inventory} Unidades
-            </Text>
           </View>
         </View>
         <View style={styles.productPriceTotalContainer}>

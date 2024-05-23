@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { FontAwesome } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -17,8 +17,39 @@ export default function Product({ product }) {
     };
     dispatch(handleAddProduct(obj));
   };
+
+  const getImage = (image) => {
+    switch (image) {
+      case "pa.png":
+        return require("../assets/images/pa.png");
+      case "pvc.png":
+        return require("../assets/images/pvc.png");
+      case "telha.png":
+        return require("../assets/images/telha.png");
+      case "tijolo.png":
+        return require("../assets/images/tijolo.png");
+      case "tinta.png":
+        return require("../assets/images/tinta.png");
+      case "areia.png":
+        return require("../assets/images/areia.png");
+      case "carrinhoDeMao.png":
+        return require("../assets/images/carrinhoDeMao.png");
+      case "cimento.png":
+        return require("../assets/images/cimento.png");
+      case "furadeira.png":
+        return require("../assets/images/furadeira.png");
+      case "martelo.png":
+        return require("../assets/images/martelo.png");
+      case "massa.png":
+        return require("../assets/images/massa.png");
+    }
+  };
   return (
     <View style={styles.productContainer}>
+      <View style={styles.productImageContainer}>
+        <Image style={styles.productImage} source={getImage(product.image)} />
+      </View>
+
       <View style={styles.productLabel}>
         <Text style={styles.productName}>{product.name}</Text>
         <View style={styles.productLabelContainer}>
@@ -46,7 +77,7 @@ export default function Product({ product }) {
           style={styles.actionButton}
         >
           <MaterialCommunityIcons name="tag" size={24} color="white" />
-          <Text style={styles.actionButtonText}>Adicionar aos Favoritos</Text>
+          <Text style={styles.actionButtonText}>Add to Favorites</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -60,6 +91,8 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderWidth: 1,
     borderColor: "#dcdcdc",
+    gap: 10,
+    alignItems: "center",
   },
   productLabel: {
     flex: 1,
@@ -113,5 +146,19 @@ const styles = StyleSheet.create({
     fontFamily: "Gilroy-Regular",
     fontSize: 11,
     color: "#555",
+  },
+  productImageContainer: {
+    height: 50,
+    width: 50,
+    padding: 5,
+    borderWidth: 1,
+    borderColor: "#558CF8",
+    borderRadius: 100,
+  },
+  productImage: {
+    height: "100%",
+    borderRadius: 100,
+    width: "100%",
+    objectFit: "contain",
   },
 });
